@@ -1,0 +1,4 @@
+1)  User üzerinde username / password olacak.
+2)  Login/Logout işlemi gerçekleştirecek.
+3)  Login olmayan kullanıcı Menü'yü göremeyecek.
+4)  Kullanıcıdan alınan userId'ler, login olan user üzerinden alınacak.
