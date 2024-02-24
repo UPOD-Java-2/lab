@@ -26,4 +26,15 @@ public class Game extends Product {
 //        System.out.println("price setlendi");
 //        super.setPrice(price);
 //    }
+
+
+    @Override
+    public String toString() {
+        return "Game{" +
+               " id = " + super.getId() +
+               "name = " + super.getName() +
+               " price = " + super.getPrice() +
+               " duration=" + duration +
+               '}';
+    }
 }

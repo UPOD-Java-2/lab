@@ -32,6 +32,18 @@ public class MusicStoreService {
         return searchedProduct;
     }
 
+    public void searchProductByName(String searchName) {
+        for (Product product : allProducts) {
+            //product.getName().contains()
+            //if (product.getName().equalsIgnoreCase(searchName)) {
+            if (product.getName().contains(searchName)) {
+                System.out.println(product);
+                return;
+            }
+        }
+        System.out.println(searchName + " isimli ürün bulunamadı");
+    }
+
     public Song searchSongOnProductByName(String songName) {
         Song searchedSong = null;
         for (var product : allProducts) {
@@ -44,6 +56,38 @@ public class MusicStoreService {
             }
         }
         return searchedSong;
+    }
+
+    public Game searchGameOnProductByName(String gameName) {
+        Game searchedGame = null;
+        for (var product : allProducts) {
+            if (product.getName().equalsIgnoreCase(gameName)) {
+                if (product instanceof Game game) {
+                    searchedGame = game;
+                    break;
+                }
+            }
+        }
+        return searchedGame;
+    }
+
+    public void searchGameByNameAndPrint(String gameName) {
+        var game = searchGameOnProductByName(gameName);
+        if (game == null) {
+            System.out.println("Oyun bulunamadı");
+            return;
+        }
+        System.out.println(game);
+    }
+
+    public void searchSongByNameAndPrint(String songName) {
+        var song = searchSongOnProductByName(songName);
+        if (song == null) {
+            System.out.println("Şarkı bulunamadı.");
+            return;
+        }
+        System.out.println(song);
+
     }
 
     public void listUsers() {
@@ -82,6 +126,30 @@ public class MusicStoreService {
             System.out.println("Kullanıcı bulunamadı.");
             return;
         }
-        user.getBasket().addProduct(product);
+        Basket userBasket = user.getBasket();
+        userBasket.addProduct(product);
+        //user.getBasket().addProduct(product);
+    }
+
+    public void listProducts() {
+        for (Product product : allProducts) {
+            System.out.println(product);
+        }
+    }
+
+    public void listSongs() {
+        for (Product product : allProducts) {
+            if (product instanceof Song song) {
+                System.out.println(song);
+            }
+        }
+    }
+
+    public void listGames() {
+        for (Product product : allProducts) {
+            if (product instanceof Game game) {
+                System.out.println(game);
+            }
+        }
     }
 }

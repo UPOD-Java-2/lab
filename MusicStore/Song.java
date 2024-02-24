@@ -21,4 +21,13 @@ public class Song extends Product {
 //        System.out.println("song");
 //    }
 
+
+    @Override
+    public String toString() {
+ 
+        return "Song{" +
+               " id: " + getId() +
+               "artist='" + artist + '\'' +
+               '}';
+    }
 }

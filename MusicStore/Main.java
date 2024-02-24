@@ -17,27 +17,63 @@ public class Main {
                     System.out.println("----------------------------------");
                 }
                 case 2 -> {
-
+                    System.out.println("----------------------------------");
+                    service.listProducts();
+                    System.out.println("----------------------------------");
                 }
                 case 3 -> {
-
+                    System.out.println("----------------------------------");
+                    service.listSongs();
+                    System.out.println("----------------------------------");
                 }
                 case 4 -> {
-
+                    System.out.println("----------------------------------");
+                    service.listGames();
+                    System.out.println("----------------------------------");
                 }
                 case 5 -> {
-
+                    System.out.println("----------------------------------");
+                    System.out.println("Ürün id'si giriniz: ");
+                    Long productId = sc.nextLong();
+                    System.out.println("Kullanıcı id'sini giriniz: ");
+                    Long userId = sc.nextLong();
+                    service.purchaseProduct(productId, userId);
+                    service.listBasketByUserId(userId);
+                    System.out.println("----------------------------------");
                 }
                 case 6 -> {
+                    System.out.println("----------------------------------");
+                    sc.nextLine();
+                    System.out.println("Aranılacak ürün adını giriniz: ");
 
+                    String productName = sc.nextLine();
+                    service.searchProductByName(productName);
+                    System.out.println("----------------------------------");
                 }
                 case 7 -> {
-
+                    System.out.println("----------------------------------");
+                    sc.nextLine();
+                    System.out.println("Aranılacak şarkı adını giriniz: ");
+                    String songName = sc.nextLine();
+                    service.searchSongByNameAndPrint(songName);
+                    System.out.println("----------------------------------");
                 }
                 case 8 -> {
+                    System.out.println("----------------------------------");
+                    sc.nextLine();
+                    System.out.println("Aranılacak oyun adını giriniz: ");
+                    String gameName = sc.nextLine();
+                    service.searchGameByNameAndPrint(gameName);
+                    System.out.println("----------------------------------");
 
                 }
                 case 9 -> {
+                    System.out.println("----------------------------------");
+                    System.out.println("Kullanıcı id'si giriniz: ");
+                    Long userId = sc.nextLong();
+                    service.listBasketByUserId(userId);
+                    System.out.println("----------------------------------");
+
 
                 }
                 case -1 -> {
@@ -45,7 +81,7 @@ public class Main {
                 }
                 default -> printMenu();
             }
-        } while(choice != -1);
+        } while (choice != -1);
 
     }
 
