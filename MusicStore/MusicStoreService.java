@@ -7,8 +7,8 @@ public class MusicStoreService {
 
 
     private User[] users = new User[]{
-            new User(1L, "Ahmet Gültekin"),
-            new User(2L, "Asım Kılıç")
+            new User(1L, "Ahmet Gültekin", "ahmet", "ahmet123"),
+            new User(2L, "Asım Kılıç", "asim", "asim123")
     };
 
     private Song song1 = new Song(1L, "Vazgeçtim", "2009", 3.40, "Müslüm Gürses");

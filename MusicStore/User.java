@@ -2,11 +2,17 @@ public class User {
     private Long id;
     private String fullName;
 
+    private String username;
+
+    private String password;
+
     private final Basket basket;
 
-    public User(Long id, String fullName) {
+    public User(Long id, String fullName, String username, String password) {
         this.id = id;
         this.fullName = fullName;
+        this.username = username;
+        this.password = password;
         this.basket = new Basket();
     }
 
@@ -20,6 +26,14 @@ public class User {
 
     public Basket getBasket() {
         return basket;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public void setFullName(String fullName) {

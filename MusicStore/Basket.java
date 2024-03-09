@@ -1,7 +1,5 @@
-import java.util.Arrays;
-
 public class Basket {
-    private Product[] products = new Product[DomainConstants.BASKET_OPENING_COUNT];
+    private Product[] products = new Product[DomainConstants.ARRAY_OPENING_COUNT];
 
     private int itemCount = 0;
     private Double totalPrice = 0d;
@@ -49,7 +47,7 @@ public class Basket {
     private void reInitializeArray() {
         //DomainConstants.BASKET_OPENING_COUNT
         //DomainConstants.BASKET_INCREASE_COUNT;
-        Product[] tempProducts = new Product[products.length + DomainConstants.BASKET_INCREASE_COUNT];
+        Product[] tempProducts = new Product[products.length + DomainConstants.ARRAY_INCREASE_COUNT];
 //        for (int i = 0; i < products.length; i++) {
 //            tempProducts[i] = products[i];
 //        }

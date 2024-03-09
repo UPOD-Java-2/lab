@@ -51,3 +51,5 @@ Thumbs.db
 
 docker-local/out
 docker-local/docker-compose-debug.yml
+
+out
